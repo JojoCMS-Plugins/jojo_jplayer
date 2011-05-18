@@ -141,8 +141,7 @@ div.jp-volume-bar-value {
     width:0px;
     height:5px;
 }
-div.jp-play-time,
-div.jp-total-time {
+div.jp-play-time, div.jp-current-time, div.jp-total-time, div.jp-duration {
     position: absolute;
     left:60px;
     width:130px;
@@ -150,7 +149,7 @@ div.jp-total-time {
     font-style:oblique;
     line-height: 100%;
 }
-div.jp-total-time {
+div.jp-total-time, div.jp-duration {
     text-align: right;
 }
 div.jp-playlist {

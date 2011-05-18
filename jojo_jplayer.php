@@ -18,7 +18,6 @@ class JOJO_Plugin_jojo_jplayer extends JOJO_Plugin
         if (strpos($content, '[[jplayer:') === false) {
             return $content;
         }
-
         global $smarty;
         $smarty->assign('mp3autoplay', (boolean)(Jojo::getOption('jplayer_autoplay', 'no')=='yes'));
         $smarty->assign('mp3volumecontrol', (boolean)(Jojo::getOption('jplayer_volumecontrol', 'no')=='yes'));
@@ -35,7 +34,7 @@ class JOJO_Plugin_jojo_jplayer extends JOJO_Plugin
             }
             $mp3['id'] = $id;
             $mp3['file'] = urlencode($mp3['file']);
-            $mp3['displayname'] = htmlspecialchars($mp3['displayname'], ENT_COMPAT, 'UTF-8', false);
+            $mp3['displayname'] = isset($mp3['displayname']) ? htmlspecialchars($mp3['displayname'], ENT_COMPAT, 'UTF-8', false) : '';
             $smarty->assign('mp3', $mp3);
             /* Get the embed html */
             $html = $smarty->fetch('jojo_jplayer.tpl');
@@ -45,6 +44,6 @@ class JOJO_Plugin_jojo_jplayer extends JOJO_Plugin
     }
 
      public static function foot() {
-        return '<script type="text/javascript" src="'._SITEURL.'/external/jplayer/jquery.jplayer.min.js"></script>'."\n";
+        return '<script type="text/javascript" src="'._SITEURL.'/external/jQuery.jPlayer.2/jquery.jplayer.min.js"></script>'."\n";
     }
 }
