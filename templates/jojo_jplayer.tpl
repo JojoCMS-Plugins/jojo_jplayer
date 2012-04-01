@@ -2,18 +2,20 @@
 <script type="text/javascript">
 /*<![CDATA[*/
 $(document).ready(function(){ldelim}
-	$("#jquery_jplayer_{$mp3.id}").jPlayer({ldelim}
-		ready: function () {ldelim}
-			$(this).jPlayer("setMedia", {ldelim}
-				mp3: "{$SITEURL}/downloads/mp3s/{$mp3.file}"
-			{rdelim}){if $mp3autoplay}.jPlayer("play"){/if};
-		{rdelim},
-		solution: "flash, html",
-		swfPath: "{$SITEURL}/external/jQuery.jPlayer.2",
-		supplied: "mp3",
-		cssSelectorAncestor: "#jp_interface_{$mp3.id}"
-	{rdelim});
-
+    $("#jquery_jplayer_{$mp3.id}").jPlayer({ldelim}
+        ready: function () {ldelim}
+            $(this).jPlayer("setMedia", {ldelim}
+                mp3: "{$SITEURL}/downloads/mp3s/{$mp3.file}"
+            {rdelim}){if $mp3autoplay}.jPlayer("play"){/if};
+        {rdelim},
+        solution: "flash, html",
+        swfPath: "{$SITEURL}/external/jQuery.jPlayer.2",
+        supplied: "mp3",
+        cssSelectorAncestor: "#jp_interface_{$mp3.id}"
+    {rdelim});
+    $("#jquery_jplayer_{$mp3.id}").bind($.jPlayer.event.play, function() {ldelim}
+      $(this).jPlayer("pauseOthers");
+    {rdelim});
 {rdelim});
 /*]]>*/
 </script>
