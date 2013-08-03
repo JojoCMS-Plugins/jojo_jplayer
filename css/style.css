@@ -98,6 +98,7 @@ div.jp-load-bar {
     width:0px;
     height:12px;
     cursor: pointer;
+    position: absolute;
 }
 div.jp-play-bar {
 -moz-border-radius: 6px;
@@ -106,8 +107,9 @@ div.jp-play-bar {
     background-color: #999;
     width:0px;
     height:12px;
+    position: absolute;
 }
-a.jp-volume-min {
+a.jp-mute {
     top:1px;
     background: url("../images/jplayercontrols.png") 0 -60px no-repeat;
     width:15px;

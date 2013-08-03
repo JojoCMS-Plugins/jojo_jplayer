@@ -54,3 +54,13 @@ $_options[] = array(
     'plugin'      => 'jojo_jplayer'
 );
 
+$_options[] = array(
+    'id'          => 'jplayer_loop',
+    'category'    => 'jPlayer',
+    'label'       => 'Loop',
+    'description' => 'Loop tracks.',
+    'type'        => 'radio',
+    'default'     => 'no',
+    'options'     => 'yes,no',
+    'plugin'      => 'jojo_jplayer'
+);

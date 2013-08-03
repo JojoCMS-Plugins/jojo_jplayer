@@ -27,7 +27,7 @@ class Jojo_Field_musicupload extends Jojo_Field
     function __construct($fielddata = array())
     {
         parent::__construct($fielddata);
-        $this->fd_maxvalue   = 10000000;
+        $this->fd_maxvalue   = 16000000;
         $this->thumbsize     = 200; //pixels - this should be defined in the DB rather than hard-coded here
         $this->viewthumbsize = 350;
     }
@@ -50,6 +50,10 @@ class Jojo_Field_musicupload extends Jojo_Field
     function displayedit()
     {
         $retval = '';
+        $crop_x = '';
+        $crop_y = '';
+        $thumb_w = 0;
+        $thumb_h = 0;
         $readonly = ($this->fd_readonly) ? ' readonly="readonly"' : '';
         if (!$this->isblank()) {
             /* Make sure the file exists */
@@ -140,10 +144,10 @@ class Jojo_Field_musicupload extends Jojo_Field
         /* Check error codes */
         switch ($_FILES['fm_FILE_'.$this->fd_field]['error']) {
             case UPLOAD_ERR_INI_SIZE: //1
-                $this->error = 'The uploaded file exceeds the maximum size allowed ('.$this->fd_maxvalue.')';
+                $this->error = 'The uploaded file exceeds the maximum size allowed in PHP.INI';
                 break;
             case UPLOAD_ERR_FORM_SIZE: //2
-                $this->error = 'The uploaded file exceeds the maximum size allowed in PHP.INI';
+                $this->error = 'The uploaded file size (' . $_FILES['fm_FILE_'.$this->fd_field]['size'] .') exceeds the maximum size allowed ('.$this->fd_maxvalue.')';
                 break;
             case UPLOAD_ERR_PARTIAL: //3
                 $this->error = 'The file has only been partially uploaded. There may have been an error in transfer, or the server may be having technical problems.';

@@ -7,8 +7,9 @@ $(document).ready(function(){ldelim}
             $(this).jPlayer("setMedia", {ldelim}
                 mp3: "{$SITEURL}/downloads/mp3s/{$mp3.file}"
             {rdelim}){if $mp3autoplay}.jPlayer("play"){/if};
-        {rdelim},
-        solution: "flash, html",
+        {rdelim},{if $mp3loop}
+         loop: true,{/if}
+       solution: "flash, html",
         swfPath: "{$SITEURL}/external/jQuery.jPlayer.2",
         supplied: "mp3",
         cssSelectorAncestor: "#jp_interface_{$mp3.id}"
@@ -30,7 +31,7 @@ $(document).ready(function(){ldelim}
             <li><a href="#" id="jplayer_play{$mp3.id}" class="jp-play button" tabindex="1">play</a></li>
             <li><a href="#" id="jplayer_pause{$mp3.id}" class="jp-pause button" tabindex="1">pause</a></li>
             <li><a href="#" id="jplayer_stop{$mp3.id}" class="jp-stop button" tabindex="1">stop</a></li>
-            {if $mp3volumecontrol}<li><a href="#" id="jplayer_volume_min{$mp3.id}" class="jp-volume-min" tabindex="1">min volume</a></li>
+            {if $mp3volumecontrol}<li><a href="#" id="jplayer_volume_min{$mp3.id}" class="jp-mute" tabindex="1">min volume</a></li>
             <li><a href="#" id="jplayer_volume_max{$mp3.id}" class="jp-volume-max" tabindex="1">max volume</a></li>{/if}
             {if $mp3download}<li><a href="{$SITEURL}/downloads/mp3s/{$mp3.file}" id="jplayer_download" class="jp-download button" tabindex="1">download</a></li>{/if}
         </ul>

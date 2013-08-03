@@ -15,11 +15,15 @@ class JOJO_Plugin_jojo_jplayer extends JOJO_Plugin
 {
     public static function jplayer($content)
     {
-        if (strpos($content, '[[jplayer:') === false) {
+        if (strpos($content, '[[jplayer:') === false && strpos($content, '[[mp3player:') === false) {
             return $content;
         }
         global $smarty;
+        if (strpos($content, '[[mp3player:') !== false) {
+            $content = str_replace('[[mp3player:', '[[jplayer:', $content);
+        }
         $smarty->assign('mp3autoplay', (boolean)(Jojo::getOption('jplayer_autoplay', 'no')=='yes'));
+        $smarty->assign('mp3loop', (boolean)(Jojo::getOption('jplayer_loop', 'no')=='yes'));
         $smarty->assign('mp3volumecontrol', (boolean)(Jojo::getOption('jplayer_volumecontrol', 'no')=='yes'));
         $smarty->assign('mp3download', (boolean)(Jojo::getOption('jplayer_download', 'no')=='yes'));
         /* Find all [[jplayer: name]] tags */
