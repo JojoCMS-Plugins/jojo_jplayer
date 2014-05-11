@@ -1,25 +1,4 @@
-<div id="jquery_jplayer_{$mp3.id}" class="jp-jplayer"></div>
-<script type="text/javascript">
-/*<![CDATA[*/
-$(document).ready(function(){ldelim}
-    $("#jquery_jplayer_{$mp3.id}").jPlayer({ldelim}
-        ready: function () {ldelim}
-            $(this).jPlayer("setMedia", {ldelim}
-                mp3: "{$SITEURL}/downloads/mp3s/{$mp3.file}"
-            {rdelim}){if $mp3autoplay}.jPlayer("play"){/if};
-        {rdelim},{if $mp3loop}
-         loop: true,{/if}
-       solution: "flash, html",
-        swfPath: "{$SITEURL}/external/jQuery.jPlayer.2",
-        supplied: "mp3",
-        cssSelectorAncestor: "#jp_interface_{$mp3.id}"
-    {rdelim});
-    $("#jquery_jplayer_{$mp3.id}").bind($.jPlayer.event.play, function() {ldelim}
-      $(this).jPlayer("pauseOthers");
-    {rdelim});
-{rdelim});
-/*]]>*/
-</script>
+<div id="jquery_jplayer_{$mp3.id}" class="jp-jplayer" data-id="{$mp3.id}" data-file="{$mp3.file}" data-auto="{$mp3autoplay}" data-loop="{$mp3loop}"></div>
 <div class="jp-single-player">
     <div id="jplayer_playlist_{$mp3.id}" class="jp-playlist">
         <ul>

@@ -40,8 +40,8 @@ div.jp-interface ul.jp-controls a.button {
     border-radius: 6px;
     background-color:#ddd;
     border:1px solid #999;
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
 }
 
 div.jp-interface ul.jp-controls a.button:hover {
@@ -50,31 +50,31 @@ div.jp-interface ul.jp-controls a.button:hover {
 }
 
 a.jp-play {
-    background: url("../images/jplayercontrols.png") 0 0 no-repeat transparent;
+    background: url("../images/jplayercontrols.png") 4px 4px no-repeat transparent;
 }
 a.jp-play:hover {
-    background: url("../images/jplayercontrols.png") -20px 0 no-repeat transparent;
+    background: url("../images/jplayercontrols.png") -16px 4px no-repeat transparent;
 }
 a.jp-pause {
-    background: url("../images/jplayercontrols.png") 0 -20px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") 4px -16px no-repeat transparent;
     display: none;
 }
 a.jp-pause:hover {
-    background: url("../images/jplayercontrols.png") -20px -20px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") -16px -16px no-repeat transparent;
 }
 a.jp-stop {
-    background: url("../images/jplayercontrols.png") 0 -40px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") 4px -36px no-repeat transparent;
     left: 27px;
 }
 a.jp-stop:hover {
-    background: url("../images/jplayercontrols.png") -20px -40px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") -16px -36px no-repeat transparent;
 }
 a.jp-download {
-    background: url("../images/jplayercontrols.png") 0 -80px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") 4px -76px no-repeat transparent;
     left: 290px;
 }
 a.jp-download:hover {
-    background: url("../images/jplayercontrols.png") -20px -80px no-repeat transparent;
+    background: url("../images/jplayercontrols.png") -16px -76px no-repeat transparent;
 }
 
 div.jp-progress {
