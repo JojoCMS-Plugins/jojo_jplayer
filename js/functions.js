@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    initialiseJPlayers();
+});
+
+function initialiseJPlayers() {
     if ($('.jp-jplayer').length>0) {
         $('.jp-jplayer').each( function(){
             var id = $(this).attr('data-id');
@@ -24,4 +28,4 @@ $(document).ready(function(){
             });
         });
     }
-});
+}

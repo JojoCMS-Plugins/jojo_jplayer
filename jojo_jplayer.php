@@ -31,18 +31,20 @@ class JOJO_Plugin_jojo_jplayer extends JOJO_Plugin
         foreach($matches[1] as $id => $mp3name) {
             /* Get the url */
             if (strpos($mp3name, '.mp3')) {
-                $mp3 = Jojo::selectRow("SELECT * FROM {mp3} WHERE filename = ?", array($mp3name));
+                $mp3 = Jojo::selectRow("SELECT * FROM {mp3} WHERE file = ?", array($mp3name));
                 $mp3['file'] = $mp3 ? $mp3['file'] : $mp3name;
             } else {
                 $mp3 = Jojo::selectRow("SELECT * FROM {mp3} WHERE name = ?", array($mp3name));
             }
-            $mp3['id'] = $id;
-            $mp3['file'] = urlencode($mp3['file']);
-            $mp3['displayname'] = isset($mp3['displayname']) ? htmlspecialchars($mp3['displayname'], ENT_COMPAT, 'UTF-8', false) : '';
-            $smarty->assign('mp3', $mp3);
-            /* Get the embed html */
-            $html = $smarty->fetch('jojo_jplayer.tpl');
-            $content = str_replace($matches[0][$id], $html, $content);
+            if ($mp3){
+                $mp3['id'] = $id . rand();
+                $mp3['file'] = urlencode($mp3['file']);
+                $mp3['displayname'] = isset($mp3['displayname']) ? htmlspecialchars($mp3['displayname'], ENT_COMPAT, 'UTF-8', false) : '';
+                $smarty->assign('mp3', $mp3);
+                /* Get the embed html */
+                $html = $smarty->fetch('jojo_jplayer.tpl');
+                $content = str_replace($matches[0][$id], $html, $content);
+            }
         }
         return $content;
     }

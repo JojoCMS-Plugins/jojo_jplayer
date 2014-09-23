@@ -14,72 +14,25 @@
  * Date: 13th May 2010
  */
 
-div.jp-interface {
-    position: relative;
-    height:25px;
-}
-
 div.jp-interface ul.jp-controls {
     list-style-type:none;
     padding:0;
     margin: 0;
-}
-div.jp-interface ul.jp-controls li {
-    position: absolute;
-    list-style: none;
-    margin: 0;
-}
-div.jp-interface ul.jp-controls a {
-    position: absolute;
-    overflow:hidden;
-    text-indent:-9999px;
-}
-div.jp-interface ul.jp-controls a.button {
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
-    border-radius: 6px;
-    background-color:#ddd;
-    border:1px solid #999;
-    width:30px;
-    height:30px;
+    li {
+        list-style: none;
+        margin: 0;
+    }
 }
 
-div.jp-interface ul.jp-controls a.button:hover {
-    background-color:#999;
-    border:1px solid #ddd;
-}
-
-a.jp-play {
-    background: url("../images/jplayercontrols.png") 4px 4px no-repeat transparent;
-}
-a.jp-play:hover {
-    background: url("../images/jplayercontrols.png") -16px 4px no-repeat transparent;
-}
-a.jp-pause {
-    background: url("../images/jplayercontrols.png") 4px -16px no-repeat transparent;
-    display: none;
-}
-a.jp-pause:hover {
-    background: url("../images/jplayercontrols.png") -16px -16px no-repeat transparent;
-}
 a.jp-stop {
-    background: url("../images/jplayercontrols.png") 4px -36px no-repeat transparent;
     left: 27px;
 }
-a.jp-stop:hover {
-    background: url("../images/jplayercontrols.png") -16px -36px no-repeat transparent;
-}
 a.jp-download {
-    background: url("../images/jplayercontrols.png") 4px -76px no-repeat transparent;
     left: 290px;
 }
-a.jp-download:hover {
-    background: url("../images/jplayercontrols.png") -16px -76px no-repeat transparent;
-}
+
 
 div.jp-progress {
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
     border-radius: 6px;
     position: absolute;
     overflow:hidden;
@@ -91,8 +44,6 @@ div.jp-progress {
 }
 
 div.jp-load-bar {
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
     border-radius: 6px;
     background-color: #ccc;
     width:0px;
@@ -101,8 +52,6 @@ div.jp-load-bar {
     position: absolute;
 }
 div.jp-play-bar {
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
     border-radius: 6px;
     background-color: #999;
     width:0px;
@@ -111,7 +60,6 @@ div.jp-play-bar {
 }
 a.jp-mute {
     top:1px;
-    background: url("../images/jplayercontrols.png") 0 -60px no-repeat;
     width:15px;
     height:20px;
     left:202px;
@@ -120,7 +68,6 @@ a.jp-volume-min:hover {
 }
 a.jp-volume-max {
     top:1px;
-    background: url("../images/jplayercontrols.png") -20px -60px no-repeat transparent;
     width:20px;
     height:20px;
     left:260px;
@@ -167,20 +114,3 @@ div.jp-playlist li {
     margin: 0;
     list-style: none;
 }
-
-.shadow {
-    -moz-box-shadow: 1px 2px 3px  #aaa;
-    -webkit-box-shadow: 1px 2px 3px #aaa;
-    box-shadow: 1px 2px 3px #aaa;
-    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#AAAAAA, Strength=2, Direction=135);     /* For IE 5.5 - 7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#aaaaaa)";   /* For IE 8 */
-}
-
-.shadow:hover {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#AAAAAA, Strength=0, Direction=135);     /* For IE 5.5 - 7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color=#aaaaaa)";   /* For IE 8 */
-}
-
